@@ -24,7 +24,6 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({
     minute: "2-digit",
   });
   const ticketStatus = ticket.status;
-  console.log("ticketStatus :>> ", ticketStatus);
   return (
     <div className="w-full p-6 overflow-y-auto" style={{ width: "50vw" }}>
       {/* Adjusted width */}
