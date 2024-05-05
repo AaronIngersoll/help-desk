@@ -34,7 +34,7 @@ const page = () => {
     const inProgressData = await queryInProgressTickets();
     const resolvedData = await queryResolvedTickets();
     setTickets(
-      inProgressData.map((ticket) => ({
+      resolvedData.map((ticket) => ({
         id: ticket.id,
         name: ticket.name,
         description: ticket.description,
