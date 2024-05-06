@@ -29,6 +29,10 @@ const page = () => {
       ticketDetailsRef?.current?.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const handleSendEmail = (response: string) => {
+    // Add your logic here to send the email with the response
+    toast.success(`successfully responded to email: ${response}`);
+  };
   const handleStatusUpdate = () => {
     // could probably put some where in here to update the ticket holder
     console.log(
@@ -89,6 +93,7 @@ const page = () => {
                 <TicketDetails
                   ticket={selectedTicket}
                   handleStatusUpdate={handleStatusUpdate}
+                  handleSendEmail={handleSendEmail}
                 />
               </div>
             )}
