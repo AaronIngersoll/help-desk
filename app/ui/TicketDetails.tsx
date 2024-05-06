@@ -24,7 +24,7 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({
   });
   const ticketStatus = ticket.status;
   return (
-    <div className="w-full p-6 overflow-y-auto" style={{ width: "50vw" }}>
+    <div className="w-full p-6 overflow-y-auto" style={{ width: "70vw" }}>
       {/* Adjusted width */}
       <h2 className="text-2xl font-semibold">{ticket.name}</h2>
       <div className="text-gray-600 mb-4">From: {ticket.email}</div>
