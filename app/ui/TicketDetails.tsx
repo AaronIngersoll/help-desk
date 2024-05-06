@@ -58,19 +58,6 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({
               Resolved
             </option>
           </select>
-          <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-            <svg
-              className="w-4 h-4 fill-current text-gray-500"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 12a2 2 0 100-4 2 2 0 000 4zM2 10a8 8 0 1116 0 8 8 0 01-16 0zm0 2a10 10 0 1020 0 10 10 0 00-20 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
         </div>
       </div>
     </div>
