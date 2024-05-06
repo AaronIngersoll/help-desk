@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  HomeIcon,
+  ExclamationTriangleIcon,
   ClipboardDocumentCheckIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
@@ -11,7 +11,7 @@ import clsx from "clsx";
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: "Home", href: "/admin", icon: HomeIcon },
+  { name: "New", href: "/admin", icon: ExclamationTriangleIcon },
   {
     name: "In Progress",
     href: "/admin/inProgress",

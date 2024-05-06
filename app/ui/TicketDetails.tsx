@@ -10,7 +10,6 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({
   ticket,
   handleStatusUpdate,
 }) => {
-  console.log("ticket :>> ", ticket);
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newStatus = event.target.value;
     updateTicketStatusById(ticket.id, newStatus);
@@ -24,7 +23,6 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({
     minute: "2-digit",
   });
   const ticketStatus = ticket.status;
-  console.log("ticketStatus :>> ", ticketStatus);
   return (
     <div className="w-full p-6 overflow-y-auto" style={{ width: "50vw" }}>
       {/* Adjusted width */}

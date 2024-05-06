@@ -10,6 +10,7 @@ import {
 import { Ticket } from "../../lib/definitions";
 import TicketList from "../../ui/TicketList";
 import TicketDetails from "../../ui/TicketDetails";
+import toast, { Toaster } from "react-hot-toast";
 
 const page = () => {
   const [tickets, setTickets] = useState<Ticket[]>([]);
@@ -25,6 +26,7 @@ const page = () => {
   };
   const handleStatusUpdate = () => {
     setIsLoading(true);
+    toast.success("Ticket updated");
     setFetchTickets((prev) => !prev);
   };
   const fetchAllTickets = async () => {
@@ -32,7 +34,7 @@ const page = () => {
     const inProgressData = await queryInProgressTickets();
     const resolvedData = await queryResolvedTickets();
     setTickets(
-      inProgressData.map((ticket) => ({
+      resolvedData.map((ticket) => ({
         id: ticket.id,
         name: ticket.name,
         description: ticket.description,
@@ -86,6 +88,7 @@ const page = () => {
           </div>
         )}
       </div>
+      <Toaster />
     </main>
   );
 };
