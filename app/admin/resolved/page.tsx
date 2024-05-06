@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card } from "../../ui/admin/cards";
 import {
   queryNewTickets,
@@ -21,10 +21,23 @@ const page = () => {
   const [fetchTickets, setFetchTickets] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const ticketDetailsRef = useRef<HTMLDivElement | null>(null);
+
   const handleTicketClick = (ticket: Ticket) => {
     setSelectedTicket(ticket);
+    if (ticketDetailsRef?.current) {
+      ticketDetailsRef?.current?.scrollIntoView({ behavior: "smooth" });
+    }
   };
   const handleStatusUpdate = () => {
+    // could probably put some where in here to update the ticket holder
+    console.log(
+      "Email ",
+      selectedTicket?.email,
+      " that ",
+      selectedTicket?.name,
+      " has been updated"
+    );
     setIsLoading(true);
     toast.success("Ticket updated");
     setFetchTickets((prev) => !prev);
@@ -72,10 +85,12 @@ const page = () => {
           <>
             <TicketList tickets={tickets} onClick={handleTicketClick} />
             {selectedTicket && (
-              <TicketDetails
-                ticket={selectedTicket}
-                handleStatusUpdate={handleStatusUpdate}
-              />
+              <div ref={ticketDetailsRef}>
+                <TicketDetails
+                  ticket={selectedTicket}
+                  handleStatusUpdate={handleStatusUpdate}
+                />
+              </div>
             )}
           </>
         ) : (
