@@ -37,10 +37,10 @@ export default function TicketForm({ notify }: { notify: () => void }) {
     formElement.reset();
   };
   return (
-    <form id="ticket-form" onSubmit={onSubmit}>
+    <form id="ticket-form" onSubmit={onSubmit} className="ml-0">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">
+          <h2 className="text-lg font-semibold leading-7 text-gray-900">
             Ticket Form
           </h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
@@ -48,15 +48,15 @@ export default function TicketForm({ notify }: { notify: () => void }) {
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-10">
               <label
-                htmlFor="Ticket Name"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                htmlFor="ticketname"
+                className="block text-lg font-medium leading-6 text-gray-900"
               >
                 Ticket Name
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-xl">
                   <input
                     type="text"
                     name="ticketname"
@@ -68,10 +68,10 @@ export default function TicketForm({ notify }: { notify: () => void }) {
                 </div>
               </div>
             </div>
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-10">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-lg font-medium leading-6 text-gray-900"
               >
                 Your Email
               </label>
@@ -85,10 +85,10 @@ export default function TicketForm({ notify }: { notify: () => void }) {
                 />
               </div>
             </div>
-            <div className="col-span-full">
+            <div className="sm:col-span-10">
               <label
                 htmlFor="description"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-lg font-medium leading-6 text-gray-900"
               >
                 Description of Ticket
               </label>

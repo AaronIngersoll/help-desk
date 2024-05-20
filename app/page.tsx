@@ -17,7 +17,7 @@ export default function Home() {
             <strong>Welcome to Aaron's Help Desk.</strong>
           </p>
         </div>
-        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+        <div className="flex items-center justify-center  md:w-2/5  md:py-6">
           <TicketForm notify={notify} />
           <Toaster />
         </div>
